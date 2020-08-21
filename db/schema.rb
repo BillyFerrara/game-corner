@@ -14,11 +14,12 @@
 ActiveRecord::Schema.define(version: 20200821215922) do
 
   create_table "games", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.string "genre"
-    t.string "platform"
-    t.string "average_playtime"
+    t.string  "name"
+    t.string  "description"
+    t.string  "genre"
+    t.string  "platform"
+    t.string  "average_playtime"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -6,6 +6,7 @@ class CreateGames < ActiveRecord::Migration
     t.string :genre
     t.string :platform
     t.string :average_playtime
+    t.integer :user_id
     end
   end
 end

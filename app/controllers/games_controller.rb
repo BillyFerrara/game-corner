@@ -2,7 +2,7 @@ class GamesController < ApplicationController
 
   get '/games' do
     if logged_in?
-      @games = Games.all
+      @games = Game.all
       erb :'games/index'
     else
       redirect '/signup'
@@ -14,8 +14,8 @@ class GamesController < ApplicationController
   end
 
   post '/games' do
-    @game = current_user.games.build(params)
-    if @game.save
+    @games = current_user.games.build(params)
+    if @games.save
       puts "Done!"
 
       redirect '/games'
