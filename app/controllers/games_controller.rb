@@ -20,7 +20,7 @@ class GamesController < ApplicationController
 
       redirect '/games'
     else
-        puts "Try again!"
+        puts "Try again"
 
       erb :'/games/new'
     end
