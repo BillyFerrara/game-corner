@@ -1,0 +1,16 @@
+<h1><%= @game.name %></h1>
+
+<h2>Description</h2>
+<p><%= @game.description %></p>
+
+<h2>Genre</h2>
+<p><%= @game.genre %></p>
+
+<h2>Platform</h2>
+<p><%= @game.platform %></p>
+
+<h2>Average Playtime</h2>
+<p><%= @game.average_playtime %></p>
+
+<p><a href="/games">Return to Games</a></p>
+<p><a href="/games/<%= @game.id %>/edit">Edit this Game</a></p>

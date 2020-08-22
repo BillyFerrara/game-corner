@@ -3,9 +3,9 @@
 <ul>
   <% @games.each do |game| %>
   <li>
-    <a href="/games/<%= game.id %>"><%= game.name %> - <%= game.description %> - <%= game.genre %> - <%= game.platform %> - <%= game.average_playtime %></a>
+    <a href="/games/<%= game.id %>"><%= game.name%> </a>
   </li>
   <% end %>
 </ul>
-
+<br>
 <p><a href="/games/new">Add a new game!</a></p>
