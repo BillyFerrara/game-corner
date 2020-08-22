@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   post '/signup' do
     if User.find_by(:email => params["email"])
-      puts "This email is already in use, please use a different email!"
+
       redirect '/login'
     else
       user = User.create(params)
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
         session[:user_id] = user.id
         redirect '/'
       else
-        puts "Please fill all fields"
+    
         redirect '/signup'
       end
     end

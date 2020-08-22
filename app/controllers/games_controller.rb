@@ -16,11 +16,9 @@ class GamesController < ApplicationController
   post '/games' do
     @games = current_user.games.build(params)
     if @games.save
-      puts "Done!"
 
       redirect '/games'
     else
-        puts "Try again"
 
       erb :'/games/new'
     end
@@ -45,30 +43,24 @@ class GamesController < ApplicationController
        end
    end
 
-   patch '/games/:id' do
+  patch '/games/:id' do
      @game = Game.find_by_id(params[:id])
-     if @user.id == @game.user_id
+     if @game.user = current_user
        @game.update(params["game"])
-       redirect "/games/#{@game.id}"
-     else
-     end
+       redirect '/games'
+    end
+   end
 
+   delete '/games/:id' do
+     @game = Game.find_by_id(params[:id])
+     if @game.user = current_user
+       @game.delete
+     end
+     redirect '/games'
    end
 
 
 
-
-
-
-
-
-
-
-
-
-  # def get_game
-  #   @games = Game.find_by_id(params[:id])
-  # end
 
 
 end
