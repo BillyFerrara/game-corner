@@ -45,17 +45,15 @@ class GamesController < ApplicationController
        end
    end
 
-  patch '/games/:id/' do
-    if @game.user == current_user
-      if @game.update(content: params[:content])
-        redirect '/games'
-      else
-        erb :'games/edit'
-      end
-    else
-      redirect '/games'
-    end
-  end
+   patch '/games/:id' do
+     @game = Game.find_by_id(params[:id])
+     if @user.id == @game.user_id
+       @game.update(params["game"])
+       redirect "/games/#{@game.id}"
+     else
+     end
+
+   end
 
 
 

@@ -1,11 +1,15 @@
-<h1>Games!</h1>
-
+<h1>Games! Welcome, <%= current_user.username %>!</h1>
+<h2><p><a href="/games/new">Add a new game!</a></p></h2>
 <ul>
   <% @games.each do |game| %>
   <li>
-    <a href="/games/<%= game.id %>"><%= game.name%> </a>
+    <br>
+    <a href="/games/<%= game.id %>"><%= game.name%> by <%= game.user.username%> </a>
+    <br>
   </li>
   <% end %>
 </ul>
 <br>
-<p><a href="/games/new">Add a new game!</a></p>
+
+<br>
+<p><a href='/logout'>Logout<a/><p>
